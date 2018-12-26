@@ -1,6 +1,14 @@
+import dotenv from "dotenv";
 import express from "express";
+import path from "path";
+
+// initialize configuration
+dotenv.config();
+
+// port is now available to the Node.js runtime 
+// as if it were an environment variable
+const port = process.env.SERVER_PORT;
 const app = express();
-const port = 8080;
 
 app.get("/", (req, res) => {
   res.send("Hello ts-node");
